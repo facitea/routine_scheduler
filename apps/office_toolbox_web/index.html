@@ -1,0 +1,757 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="직장인을 위한 루틴 스케줄러, 금융 계산기, 급여 계산기, 날짜 계산기, 나이 계산기, 문서 및 이미지 도구 모음입니다."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-adsense-account" content="ca-pub-0801897265011813" />
+    <meta name="naver-site-verification" content="a5192c3c41a2e583faf1e7214c10852e0c938834" />
+    <title>직장인 도구 모음 - 무료 실무 계산기</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="canonical" href="https://ilhagisiro.co.kr/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="직장인 도구 모음" />
+    <meta property="og:title" content="직장인 도구 모음" />
+    <meta
+      property="og:description"
+      content="루틴 스케줄러, 금융 계산기, 급여 계산기, 날짜 계산기, 나이 계산기 등 자주 쓰는 실무 도구를 한 곳에서 사용하세요."
+    />
+    <meta property="og:url" content="https://ilhagisiro.co.kr/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="직장인 도구 모음 - 무료 실무 계산기" />
+    <meta
+      name="twitter:description"
+      content="루틴 스케줄러, 금융 계산기, 급여 계산기, 날짜 계산기, 나이 계산기 등 자주 쓰는 실무 도구를 한 곳에서 사용하세요."
+    />
+    <link rel="alternate" type="application/rss+xml" title="직장인 도구 모음 RSS" href="/rss.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0801897265011813"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <template id="home-template">
+      <div class="page page--home">
+        <section class="hero hero--compact">
+          <img
+            class="hero__image"
+            src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80"
+            alt="사무 공간과 협업 장면"
+          />
+          <div class="hero__overlay"></div>
+          <div class="hero__content">
+            <span class="hero__eyebrow">Work Smart</span>
+            <h3>직장인 도구 모음</h3>
+            <p>자주 쓰는 실무 도구를 한 화면에 모아두고 빠르게 꺼내 쓰는 작업 공간입니다.</p>
+            <div class="button-row">
+              <button class="button button--accent" type="button" data-go="routine">루틴 스케줄러</button>
+            <button class="button button--ghost" type="button" data-go="interest">금융 계산기</button>
+            <button class="button button--ghost" type="button" data-go="salary">급여 계산기</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="home-featured">
+          <button class="feature-card feature-card--wide" type="button" data-go="routine">
+            <div class="feature-card__meta">
+              <span class="feature-card__kicker">Main</span>
+              <h3>Routine Scheduler</h3>
+              <p>반복 일정, 완료 체크, 날짜 색칠, 로그인 후 클라우드 동기화까지 한 번에.</p>
+            </div>
+            <div class="feature-card__badge">Calendar</div>
+          </button>
+          <div class="grid grid--tools">
+            <button class="tool-card" type="button" data-go="interest">
+              <span class="tool-card__icon">금융</span>
+              <div>
+                <h3>금융 계산기</h3>
+                <p>대출, 예적금, 카드 할부 계산</p>
+              </div>
+              <div class="tool-card__footer">계산</div>
+            </button>
+            <button class="tool-card" type="button" data-go="salary">
+              <span class="tool-card__icon">급여</span>
+              <div>
+                <h3>급여 계산기</h3>
+                <p>실수령액, 연차/근속연수, 퇴직금, 실업급여 계산</p>
+              </div>
+              <div class="tool-card__footer">노무</div>
+            </button>
+            <button class="tool-card" type="button" data-go="date-tools">
+              <span class="tool-card__icon">날짜</span>
+              <div>
+                <h3>날짜 계산기</h3>
+                <p>두 날짜 사이 일수, 주수, 개월 수, 연월일 차이</p>
+              </div>
+              <div class="tool-card__footer">기간</div>
+            </button>
+            <button class="tool-card" type="button" data-go="age">
+              <span class="tool-card__icon">나이</span>
+              <div>
+                <h3>나이 계산기</h3>
+                <p>출생일 기준 만 나이, 연나이, 띠 계산</p>
+              </div>
+              <div class="tool-card__footer">생년월일</div>
+            </button>
+            <button class="tool-card" type="button" data-go="pdf">
+              <span class="tool-card__icon">PDF</span>
+              <div>
+                <h3>PDF 변환기</h3>
+                <p>PDF 합치기, 나누기, 용량 줄이기</p>
+              </div>
+              <div class="tool-card__footer">문서</div>
+            </button>
+            <button class="tool-card" type="button" data-go="image">
+              <span class="tool-card__icon">IMG</span>
+              <div>
+                <h3>이미지 도구</h3>
+                <p>이미지 리사이징, 포맷 변환, 용량 줄이기</p>
+              </div>
+              <div class="tool-card__footer">이미지</div>
+            </button>
+            <button class="tool-card" type="button" data-go="video">
+              <span class="tool-card__icon">VID</span>
+              <div>
+                <h3>동영상 도구</h3>
+                <p>동영상 포맷 변환과 용량 줄이기</p>
+              </div>
+              <div class="tool-card__footer">동영상</div>
+            </button>
+            <button class="tool-card" type="button" data-go="writing">
+              <span class="tool-card__icon">글</span>
+              <div>
+                <h3>글 교정기</h3>
+                <p>글자수 계산과 기본 맞춤법 검사</p>
+              </div>
+              <div class="tool-card__footer">문장</div>
+            </button>
+            <button class="tool-card" type="button" data-go="expense">
+              <span class="tool-card__icon">생활</span>
+              <div>
+                <h3>생활비 계산기</h3>
+                <p>월급에서 카드/현금 지출과 남는 금액 계산</p>
+              </div>
+              <div class="tool-card__footer">지출</div>
+            </button>
+            <button class="tool-card" type="button" data-go="coming-soon">
+              <span class="tool-card__icon">추가</span>
+              <div>
+                <h3>추가 도구</h3>
+                <p>계속 확장되는 실무 도구 메뉴</p>
+              </div>
+              <div class="tool-card__footer">More</div>
+            </button>
+          </div>
+        </section>
+
+        <section class="home-legal">
+          <span>Office Toolkit</span>
+          <button type="button" data-go="privacy">개인정보처리방침</button>
+          <button type="button" data-go="terms">이용약관</button>
+        </section>
+      </div>
+    </template>
+
+    <template id="routine-template">
+      <div class="page">
+        <section class="section-head">
+          <div>
+            <h3>루틴 스케줄러</h3>
+            <p>지금은 브라우저 로컬 저장 기반으로 동작합니다.</p>
+          </div>
+          <div class="button-row">
+            <button class="button button--line" type="button" data-open-modal data-date="">
+              선택 날짜 일정 보기
+            </button>
+          </div>
+        </section>
+
+        <section class="routine-layout">
+          <div class="panel">
+            <div class="tool-list__header">
+              <div>
+                <h3>루틴 추가</h3>
+                <p class="helper">반복 조건과 중요도를 함께 저장합니다.</p>
+              </div>
+            </div>
+            <form class="form-grid" data-routine-form>
+              <div class="field">
+                <label for="routine-title">제목</label>
+                <input
+                  class="input"
+                  id="routine-title"
+                  name="title"
+                  type="text"
+                  placeholder="예: 일일 매출 정리"
+                  required
+                />
+              </div>
+              <div class="form-grid form-grid--two">
+                <div class="field">
+                  <label for="routine-start">시작 날짜</label>
+                  <input class="input" id="routine-start" name="startDate" type="date" required />
+                </div>
+                <div class="field">
+                  <label for="routine-cadence">반복</label>
+                  <select class="select" id="routine-cadence" name="cadence">
+                    <option value="daily">매일</option>
+                    <option value="weekly">매주</option>
+                    <option value="monthly">매달</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-grid form-grid--two">
+                <div class="field">
+                  <label for="routine-priority">중요도</label>
+                  <select class="select" id="routine-priority" name="priority">
+                    <option value="3">높음</option>
+                    <option value="2" selected>보통</option>
+                    <option value="1">낮음</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>선택 날짜</label>
+                  <input class="input" id="selected-date" name="selectedDate" type="date" />
+                </div>
+              </div>
+              <div class="button-row">
+                <button class="button button--line" type="button" data-open-modal data-date="">
+                  날짜별 일정 확인
+                </button>
+              </div>
+              <div class="field">
+                <label for="routine-note">메모</label>
+                <textarea
+                  class="textarea"
+                  id="routine-note"
+                  name="note"
+                  placeholder="체크 포인트나 설명을 짧게 적어둘 수 있습니다."
+                ></textarea>
+              </div>
+              <div class="button-row">
+                <button class="button button--accent" data-scroll-add type="submit">
+                  루틴 저장
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="panel panel--soft">
+            <div class="tool-list__header">
+              <div>
+                <h3>오늘 포커스</h3>
+                <p class="helper">오늘 기준으로 필요한 루틴만 먼저 보여줍니다.</p>
+              </div>
+            </div>
+            <div class="routine-summary" data-routine-summary></div>
+            <div class="focus-list" data-today-routines></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="tool-list">
+            <div class="tool-list__header">
+              <div>
+                <h3>저장된 루틴</h3>
+                <p class="helper">중요도 순으로 정렬되며 로컬 브라우저에 저장됩니다.</p>
+              </div>
+              <div class="pill-row">
+                <button class="pill is-active" type="button" data-filter="all">전체</button>
+                <button class="pill" type="button" data-filter="3">높음</button>
+                <button class="pill" type="button" data-filter="2">보통</button>
+                <button class="pill" type="button" data-filter="1">낮음</button>
+              </div>
+            </div>
+            <div class="routine-list" data-routine-list></div>
+          </div>
+        </section>
+      </div>
+    </template>
+
+    <template id="interest-template">
+      <div class="page">
+        <section class="section-head">
+          <div>
+            <h3>금융 계산기</h3>
+            <p>대출이자, 예적금, 카드 할부를 계산합니다.</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="pill-row" data-interest-tabs>
+            <button class="pill is-active" type="button" data-interest-tab="loan">대출이자 계산기</button>
+            <button class="pill" type="button" data-interest-tab="savings">예/적금 계산기</button>
+            <button class="pill" type="button" data-interest-tab="card">카드 할부 계산기</button>
+          </div>
+        </section>
+
+        <section class="grid grid--split interest-workspace">
+          <div class="panel">
+            <form class="form-grid" data-interest-form>
+              <input type="hidden" name="calculatorType" value="loan" />
+              <div class="form-grid form-grid--two">
+                <div class="field" data-principal-field>
+                  <label for="principal" data-principal-label>원금</label>
+                  <input class="input" id="principal" name="principal" type="number" min="0" value="30000000" />
+                </div>
+                <div class="field" data-annual-rate-field>
+                  <label for="annual-rate" data-annual-rate-label>연 이율(%)</label>
+                  <input class="input" id="annual-rate" name="annualRate" type="number" min="0" step="0.1" value="4.8" />
+                </div>
+              </div>
+              <div class="form-grid form-grid--two">
+                <div class="field" data-months-field>
+                  <label for="months" data-months-label>기간(개월)</label>
+                  <input class="input" id="months" name="months" type="number" min="1" value="36" />
+                </div>
+                <div class="field">
+                  <label for="mode">상환 방식</label>
+                  <select class="select" id="mode" name="mode">
+                    <option value="equalPayment">원리금균등상환</option>
+                    <option value="equalPrincipal">원금균등상환</option>
+                    <option value="maturity">만기일시상환</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-grid form-grid--two" data-loan-extra>
+                <div class="field" data-start-fee-field>
+                  <label for="start-fee" data-start-fee-label>수수료/부대비용</label>
+                  <input class="input" id="start-fee" name="startFee" type="number" min="0" value="0" />
+                </div>
+                <div class="field" data-monthly-contribution-field>
+                  <label for="monthly-saving" data-monthly-contribution-label>월 납입액</label>
+                  <input class="input" id="monthly-saving" name="monthlyContribution" type="number" min="0" value="500000" />
+                </div>
+              </div>
+              <div class="button-row">
+                <button class="button button--accent" type="submit">계산하기</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="panel panel--soft">
+            <div class="tool-list__header">
+              <div>
+                <h3>계산 결과</h3>
+                <p class="helper">월별 흐름과 총이자, 만기 금액을 함께 봅니다.</p>
+              </div>
+            </div>
+            <div data-interest-result></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="tool-list__header">
+            <div>
+              <h3>월별 표</h3>
+              <p class="helper">매달 얼마가 빠지거나 쌓이는지 흐름을 표로 보여줍니다.</p>
+            </div>
+          </div>
+          <div class="table-wrap" data-interest-table></div>
+        </section>
+
+        <section class="panel panel--soft">
+          <div class="tool-list__header">
+            <div>
+              <h3>안내</h3>
+              <p class="helper">
+                계산 결과는 참고용이며, 실제 금융상품 조건, 세금, 수수료, 우대금리, 상환 일정에 따라 달라질 수 있습니다.
+                본 계산 결과만으로 투자, 대출, 계약 판단을 내린 데 대한 법적 책임은 지지 않습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </template>
+
+    <template id="salary-template">
+      <div class="page">
+        <section class="section-head">
+          <div>
+            <h3>급여 계산기</h3>
+            <p>실수령액, 연차/근속연수, 퇴직금, 실업급여를 한 곳에서 계산합니다.</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="pill-row" data-salary-tabs>
+            <button class="pill is-active" type="button" data-salary-tab="netpay">실수령액 계산기</button>
+            <button class="pill" type="button" data-salary-tab="leave">연차/근속연수 계산기</button>
+            <button class="pill" type="button" data-salary-tab="severance">퇴직금 계산기</button>
+            <button class="pill" type="button" data-salary-tab="unemployment">실업급여 계산기</button>
+          </div>
+        </section>
+
+        <section class="grid grid--split interest-workspace">
+          <div class="panel">
+            <form class="form-grid" data-salary-form></form>
+          </div>
+
+          <div class="panel panel--soft">
+            <div class="tool-list__header">
+              <div>
+                <h3>계산 결과</h3>
+                <p class="helper">입력값 기준의 예상 결과입니다.</p>
+              </div>
+            </div>
+            <div data-salary-result></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="tool-list__header">
+            <div>
+              <h3>상세 표</h3>
+              <p class="helper">계산에 사용된 주요 항목을 정리합니다.</p>
+            </div>
+          </div>
+          <div class="table-wrap" data-salary-table></div>
+        </section>
+
+        <section class="panel panel--soft">
+          <div class="tool-list__header">
+            <div>
+              <h3>안내</h3>
+              <p class="helper">
+                계산 결과는 참고용입니다. 실제 급여, 퇴직금, 실업급여, 연차 산정은 근로계약, 평균임금, 고용보험 이력, 세법 및 관계기관 판단에 따라 달라질 수 있습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </template>
+
+    <template id="date-tools-template">
+  <div class="page">
+    <section class="section-head">
+      <div>
+        <h3>날짜 계산기</h3>
+        <p>두 날짜 사이 기간을 일수, 주수, 개월 수, 연월일 기준으로 한 번에 계산합니다.</p>
+      </div>
+    </section>
+
+    <section class="grid grid--split">
+      <div class="panel">
+        <form class="form-grid" data-date-form>
+          <div class="form-grid form-grid--two">
+            <div class="field">
+              <label for="date-start">시작 날짜</label>
+              <input class="input" id="date-start" name="startDate" type="date" />
+            </div>
+            <div class="field">
+              <label for="date-end">종료 날짜</label>
+              <input class="input" id="date-end" name="endDate" type="date" />
+            </div>
+          </div>
+          <div class="pill-row">
+            <button class="pill is-active" type="button" data-date-include="exclude">첫날 제외</button>
+            <button class="pill" type="button" data-date-include="include">첫날 포함</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel panel--soft">
+        <div class="tool-list__header">
+          <div>
+            <h3>계산 결과</h3>
+            <p class="helper">첫날 포함 여부에 따라 기간을 바로 비교할 수 있습니다.</p>
+          </div>
+        </div>
+        <div data-date-result></div>
+      </div>
+    </section>
+  </div>
+</template>
+
+    <template id="age-template">
+      <div class="page">
+        <section class="section-head">
+          <div>
+            <h3>나이 계산기</h3>
+            <p>출생일과 기준일로 만 나이, 연나이, 띠를 계산합니다.</p>
+          </div>
+        </section>
+
+        <section class="grid grid--split">
+          <div class="panel">
+            <form class="form-grid" data-age-form>
+              <div class="form-grid form-grid--two">
+                <div class="field">
+                  <label for="birth-date">출생일</label>
+                  <input class="input" id="birth-date" name="birthDate" type="date" required />
+                </div>
+                <div class="field">
+                  <label for="age-base-date">기준일</label>
+                  <input class="input" id="age-base-date" name="baseDate" type="date" required />
+                </div>
+              </div>
+              <div class="button-row">
+                <button class="button button--accent" type="submit">계산하기</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="panel panel--soft">
+            <div class="tool-list__header">
+              <div>
+                <h3>계산 결과</h3>
+                <p class="helper">기준일 현재 나이를 보여줍니다.</p>
+              </div>
+            </div>
+            <div data-age-result></div>
+          </div>
+        </section>
+
+        <section class="panel panel--soft">
+          <p class="helper">참고: 띠는 입춘일을 기준으로 계산합니다.</p>
+        </section>
+      </div>
+    </template>
+
+    <template id="pdf-template">
+      <div class="page">
+        <section class="section-head">
+          <div>
+            <h3>PDF 변환기</h3>
+            <p>브라우저 안에서 PDF 합치기, 나누기, 용량 줄이기를 처리합니다.</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="pill-row" data-pdf-tabs>
+            <button class="pill is-active" type="button" data-pdf-tab="merge">PDF 합치기</button>
+            <button class="pill" type="button" data-pdf-tab="split">PDF 나누기</button>
+            <button class="pill" type="button" data-pdf-tab="compress">PDF 용량 줄이기</button>
+          </div>
+        </section>
+
+        <section class="grid grid--split">
+          <div class="panel">
+            <div class="form-grid" data-pdf-form-wrap></div>
+          </div>
+          <div class="panel panel--soft">
+            <div class="tool-list__header">
+              <div>
+                <h3>처리 상태</h3>
+                <p class="helper">파일은 서버로 보내지지 않고 이 브라우저 안에서만 처리합니다.</p>
+              </div>
+            </div>
+            <div data-pdf-result></div>
+          </div>
+        </section>
+
+      </div>
+    </template>
+
+    <template id="image-template">
+      <div class="page">
+        <section class="section-head">
+          <div>
+            <h3>이미지 도구</h3>
+            <p>브라우저 안에서 이미지 리사이징, 포맷 변환, 용량 줄이기를 처리합니다.</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="pill-row" data-image-tabs>
+            <button class="pill is-active" type="button" data-image-tab="resize">이미지 리사이징</button>
+            <button class="pill" type="button" data-image-tab="convert">이미지 포맷 변환</button>
+            <button class="pill" type="button" data-image-tab="compress">이미지 용량 줄이기</button>
+          </div>
+        </section>
+
+        <section class="grid grid--split">
+          <div class="panel">
+            <form class="form-grid" data-image-form>
+              <div class="field">
+                <label for="image-file">이미지 파일 (최대 300개)</label>
+                <input class="input" id="image-file" name="imageFile" type="file" accept="image/*" multiple />
+              </div>
+              <div class="form-grid" data-image-options></div>
+              <div class="button-row">
+                <button class="button button--accent" type="submit" data-image-submit>실행하기</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="panel panel--soft">
+            <div class="tool-list__header">
+              <div>
+                <h3>미리보기</h3>
+                <p class="helper">파일은 서버로 보내지지 않고 이 브라우저 안에서만 처리합니다.</p>
+              </div>
+            </div>
+            <div data-image-result></div>
+          </div>
+        </section>
+      </div>
+    </template>
+
+    <template id="video-template">
+      <div class="page">
+        <section class="section-head">
+          <div>
+            <h3>동영상 도구</h3>
+            <p>MOV, MP4, MKV, AVI, WMV 동영상의 포맷 변환과 용량 줄이기를 처리합니다.</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="pill-row" data-video-tabs>
+            <button class="pill is-active" type="button" data-video-tab="compress">동영상 용량 줄이기</button>
+            <button class="pill" type="button" data-video-tab="convert">동영상 포맷 변환</button>
+          </div>
+        </section>
+
+        <section class="grid grid--split">
+          <div class="panel">
+            <form class="form-grid" data-video-form>
+              <div class="field">
+                <label for="video-file">동영상 파일 (최대 20개)</label>
+                <input class="input" id="video-file" name="videoFile" type="file" accept=".mov,.mp4,.mkv,.avi,.wmv,video/quicktime,video/mp4,video/x-matroska,video/x-msvideo,video/x-ms-wmv" multiple />
+                <p class="helper">입력 포맷은 파일에서 자동으로 확인합니다.</p>
+              </div>
+              <div class="form-grid" data-video-options></div>
+              <div class="button-row">
+                <button class="button button--accent" type="submit" data-video-submit>용량 줄이기</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="panel panel--soft">
+            <div class="tool-list__header">
+              <div>
+                <h3>처리 상태</h3>
+                <p class="helper">파일은 서버로 보내지지 않고 이 브라우저 안에서만 처리합니다.</p>
+              </div>
+            </div>
+            <div data-video-result></div>
+          </div>
+        </section>
+      </div>
+    </template>
+
+    <template id="writing-template">
+      <div class="page">
+        <section class="section-head">
+          <div>
+            <h3>글 교정기</h3>
+            <p>글자수 계산과 기본 맞춤법 검사를 브라우저 안에서 처리합니다.</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="pill-row" data-writing-tabs>
+            <button class="pill is-active" type="button" data-writing-tab="count">글자수 계산기</button>
+            <button class="pill" type="button" data-writing-tab="spell">맞춤법 계산기</button>
+          </div>
+        </section>
+
+        <section class="grid grid--split">
+          <div class="panel">
+            <form class="form-grid" data-writing-form>
+              <div class="field">
+                <label for="writing-text">검사할 글</label>
+                <textarea class="textarea textarea--tall" id="writing-text" name="text" placeholder="여기에 문장을 입력하세요."></textarea>
+              </div>
+              <div class="button-row">
+                <button class="button button--accent" type="submit" data-writing-submit>계산하기</button>
+                <button class="button button--line" type="button" data-writing-clear>지우기</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="panel panel--soft">
+            <div class="tool-list__header">
+              <div>
+                <h3 data-writing-result-title>계산 결과</h3>
+                <p class="helper" data-writing-helper>공백 포함/제외 글자수와 단어 수를 확인합니다.</p>
+              </div>
+            </div>
+            <div data-writing-result></div>
+          </div>
+        </section>
+      </div>
+    </template>
+
+    <template id="expense-template">
+      <div class="page">
+        <section class="section-head">
+          <div>
+            <h3>생활비 계산기</h3>
+            <p>월급 기준으로 카드 지출, 현금 지출, 남는 금액을 원 단위로 계산합니다.</p>
+          </div>
+        </section>
+
+        <section class="grid grid--split expense-workspace">
+          <div class="panel">
+            <form class="form-grid" data-expense-form>
+              <div class="field">
+                <label for="expense-income">월급 세후</label>
+                <div class="input-suffix">
+                  <input class="input" id="expense-income" name="income" type="text" inputmode="numeric" placeholder="예: 3,000,000" />
+                  <span>원</span>
+                </div>
+              </div>
+
+              <div class="expense-table" data-expense-rows></div>
+
+              <div class="button-row">
+                <button class="button button--accent" type="submit">계산</button>
+                <button class="button button--line" type="button" data-expense-save hidden>저장</button>
+                <button class="button button--line" type="button" data-expense-reset>초기화</button>
+              </div>
+              <p class="helper" data-expense-save-status></p>
+            </form>
+          </div>
+
+          <div class="panel panel--soft">
+            <div class="tool-list__header">
+              <div>
+                <h3>계산 결과</h3>
+                <p class="helper">금액은 모두 원 단위입니다.</p>
+              </div>
+            </div>
+            <div data-expense-result></div>
+          </div>
+        </section>
+      </div>
+    </template>
+
+    <template id="placeholder-template">
+      <div class="page">
+        <section class="panel placeholder">
+          <span class="status-badge" data-placeholder-tag>준비 중</span>
+          <div>
+            <h3 data-placeholder-title>추가 도구</h3>
+            <p data-placeholder-copy>이 자리는 다음 도구들을 위한 영역입니다.</p>
+          </div>
+          <div class="button-row">
+            <button class="button button--line" type="button" data-go="home">메인으로 돌아가기</button>
+          </div>
+        </section>
+      </div>
+    </template>
+
+    <script type="module" src="/src/main.js?v=20260615a"></script>
+  </body>
+</html>
+
+
