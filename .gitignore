@@ -29,6 +29,7 @@ firestore-debug.log*
 ui-debug.log*
 
 # Flutter / Dart
+apps/calendar_app/
 .dart_tool/
 .packages
 .pub-cache/
